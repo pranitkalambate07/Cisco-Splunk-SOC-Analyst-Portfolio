@@ -1,5 +1,5 @@
 # 🚨 Incident Report: #SOC-2026-005
-**Status:** 🔄 In Progress | **Priority:** 🟢 Low | **Assigned To:** Vinayak Ashok Bharadi
+**Status:** ✅ Closed | **Priority:** 🟢 Low | **Assigned To:** Pranit Kalambate
 
 ---
 
@@ -18,11 +18,11 @@ The technical investigation is complete, but executive management requires a vis
 ## 🕵️‍♂️ Investigation & Findings
 
 ### 📊 Attack Visualization
-- **Peak Attack Time:** `Pending`
-- **Visual Evidence:** (Will attach Splunk graph screenshot here)
+- **Peak Attack Time:** `2016-08-11 03:07 AM` (Maximum spike with 928 malicious hits in a single minute).
+- **Visual Evidence:** *(Attach your final 3531 events Area Chart screenshot here)*
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-Pending
+index="botsv1" sourcetype="iis" c_ip="40.80.148.42" sc_status="404" OR sc_status="500" | timechart span=1m count
