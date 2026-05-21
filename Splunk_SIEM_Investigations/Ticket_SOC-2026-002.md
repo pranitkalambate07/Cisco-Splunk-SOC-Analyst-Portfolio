@@ -1,6 +1,6 @@
 
 # 🚨 Incident Report: #SOC-2026-002
-**Status:** 🔄 In Progress | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
+**Status:** ✅ Closed | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
 ---
 
@@ -19,11 +19,11 @@ The SOC has received an alert regarding an abnormal spike in outbound data trans
 ## 🕵️‍♂️ Investigation & Findings
 
 ### 📥 1. Top Exfiltrator Details
-- **Suspect IP:** `Pending`
-- **Total Data Stolen (MB):** `Pending`
+- **Suspect IP:** `40.80.148.42`
+- **Total Data Stolen (MB):** `18.94 MB`
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-Pending
+index="botsv1" sourcetype="stream:http" | stats sum(bytes_out) as TotalBytes by src_ip | eval Total_MB = round((TotalBytes/1024/1024), 2) | sort - Total_MB | head 10
