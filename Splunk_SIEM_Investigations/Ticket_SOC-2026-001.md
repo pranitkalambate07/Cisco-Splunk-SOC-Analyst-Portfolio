@@ -6,7 +6,7 @@
 ## 📋 Ticket Overview
 * **Alert Title:** Anomalous Inbound Web Traffic & Potential Vulnerability Scanning Detected
 * **Target Domain:** `imreallynotabat.com`
-* **Telemetry Source:** `index=botsv1` | `sourcetype=access_combined`
+* **Telemetry Source:** `index=botsv1` | `sourcetype=iis`
 
 ---
 
@@ -16,7 +16,6 @@ Our external-facing web infrastructure has triggered a threshold alert due to an
 ---
 
 ## 🕵️‍♂️ Investigation & Findings
-*To be filled out after running Splunk queries...*
 
 ### 📥 1. Malicious Source IP & Attack Volume
 - **Attacker IP:** `40.80.148.42`
@@ -31,5 +30,5 @@ Our external-facing web infrastructure has triggered a threshold alert due to an
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-index=botsv1 sourcetype=iis sc_Status="404" OR sc_status="500" | top limit=10 c_ip
+index=botsv1 sourcetype=iis sc_status="404" OR sc_status="500" | top limit=10 c_ip
 index=botsv1 sourcetype=iis c_ip="40.80.148.42" | top limit=10 cs_uri_stem
