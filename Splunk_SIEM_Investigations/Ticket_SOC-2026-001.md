@@ -1,28 +1,32 @@
-================================================================================
-TICKET ID: #SOC-2026-001                               PRIORITY: HIGH
-STATUS: OPEN                                           ASSIGNED TO: Pranit Kalambate
-ALERTER: Splunk ES Correlation Engine
-================================================================================
+# 🚨 Incident Report: #SOC-2026-001
+**Status:** 🔄 In Progress | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
-ALERT TITLE: 
-Anomalous Inbound Web Traffic & Potential Vulnerability Scanning Detected.
+---
 
-DETAILED DESCRIPTION:
-Our external-facing web infrastructure (hosting the domain: imreallynotabat.com) 
-has triggered a threshold alert. The SIEM has detected an unusual spike in 
-HTTP status codes (404 Not Found and 500 Internal Server Error) within a short 
-timeframe. 
+## 📋 Ticket Overview
+* **Alert Title:** Anomalous Inbound Web Traffic & Potential Vulnerability Scanning Detected
+* **Target Domain:** `imreallynotabat.com`
+* **Telemetry Source:** `index=botsv1` | `sourcetype=access_combined`
 
-This behavior is highly indicative of automated web reconnaissance, directory 
-brute-forcing, or a malicious vulnerability scanner (like Nikto/Dirbuster) 
-attempting to find exposed pages or code.
+---
 
-TELEMETRY DATA SOURCE AVAILABLE:
-- sourcetype = access_combined 
-- index = botsv1
+## 🔍 Detailed Description
+Our external-facing web infrastructure has triggered a threshold alert due to an unusual spike in HTTP status codes **404 (Not Found)** and **500 (Internal Server Error)** within a short timeframe. This behavior indicates automated web reconnaissance, directory brute-forcing, or scanners (e.g., Nikto/Dirbuster) attempting to locate exposed files.
 
-OBJECTIVES FOR THE ANALYST:
-1. Identify the malicious external Source IP address targeting our server.
-2. Quantify the attack: Find the total number of connection attempts made by this IP.
-3. Determine the attacker's intent: Which specific URI paths (web pages) was the attacker trying to scan or exploit?
-4. Write the SPL query used to uncover the evidence.
+---
+
+## 🕵️‍♂️ Investigation & Findings
+*To be filled out after running Splunk queries...*
+
+### 📥 1. Malicious Source IP & Attack Volume
+- **Attacker IP:** `Pending`
+- **Total Request Count:** `Pending`
+
+### 🗺️ 2. Attacker Intent (Targeted URI Paths)
+- *What specific directories or pages was the attacker scanning?*
+
+---
+
+## 💻 Technical Evidence (SPL Query)
+```splunk
+index=botsv1 sourcetype=access_combined (status=404 OR status=500) | top limit=10 clientip
