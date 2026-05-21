@@ -1,5 +1,5 @@
 # 🚨 Incident Report: #SOC-2026-001
-**Status:** 🔄 In Progress | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
+**Status:** ✅ Closed | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
 ---
 
@@ -23,10 +23,13 @@ Our external-facing web infrastructure has triggered a threshold alert due to an
 - **Total Request Count:** `3531`
 
 ### 🗺️ 2. Attacker Intent (Targeted URI Paths)
-- *What specific directories or pages was the attacker scanning?*
+- **Targeted Framework:**`Joomla CMS`
+- **Primary Attack Vector:**`/joomla/index.php/component/search/ (Highly targeted for potential injection vulnerabilities).`
+- **Secondary Target:**`/joomla/administrator/index.php (Attempted admin panel discovery/brute-forcing).`
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-index=botsv1 sourcetype=access_combined (status=404 OR status=500) | top limit=10 clientip
+index=botsv1 sourcetype=iis sc_Status="404" OR sc_status="500" | top limit=10 c_ip
+index=botsv1 sourcetype=iis c_ip="40.80.148.42" | top limit=10 cs_uri_stem
