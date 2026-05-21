@@ -13,18 +13,18 @@ The goal of this project is to simulate a real-world Security Operations Center 
 
 This investigation was structured into 5 distinct phases (ticket-based workflow). Click on the tickets below to view the detailed investigation reports and visual evidence:
 
-* 📄 **[Phase 1: Web Reconnaissance & Intent Analysis](Ticket_SOC-2026-001.md)**
+* 📄 **[Phase 1: Web Reconnaissance & Intent Analysis](Splunk_SIEM_Investigations/Ticket_SOC-2026-001.md)**
   * Identified the attacker IP (`40.80.148.42`) generating 3,531 malicious requests.
   * Discovered the primary target: Joomla CMS (`/joomla/index.php/component/search/`).
-* 📄 **[Phase 2: Data Exfiltration & Network Pivoting](Ticket_SOC-2026-002.md)**
+* 📄 **[Phase 2: Data Exfiltration & Network Pivoting](Splunk_SIEM_Investigations/Ticket_SOC-2026-002.md)**
   * Pivoted from application logs to network wire data (`stream:http`) to bypass missing IIS byte logs.
   * Confirmed the successful exfiltration of **18.94 MB** of data.
-* 📄 **[Phase 3: Attack Timeline & Duration Analysis](Ticket_SOC-2026-003.md)**
+* 📄 **[Phase 3: Attack Timeline & Duration Analysis](Splunk_SIEM_Investigations/Ticket_SOC-2026-003.md)**
   * Grouped 20,967 individual requests into a single session by bypassing memory limits.
   * Calculated the exact campaign duration: **45.70 minutes**.
-* 📄 **[Phase 4: Threat Intelligence & Geolocation](Ticket_SOC-2026-004.md)**
+* 📄 **[Phase 4: Threat Intelligence & Geolocation](Splunk_SIEM_Investigations/Ticket_SOC-2026-004.md)**
   * Enriched the raw IP data to trace the attacker's origin to **Washington, Virginia, US**.
-* 📄 **[Phase 5: Attack Visualization for Executive Reporting](Ticket_SOC-2026-005.md)**
+* 📄 **[Phase 5: Attack Visualization for Executive Reporting](Splunk_SIEM_Investigations/Ticket_SOC-2026-005.md)**
   * Plotted a time-series area chart revealing the peak attack velocity at **03:07 AM** (928 hits/minute).
 
 ---
