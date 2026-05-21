@@ -1,5 +1,5 @@
 # 🚨 Incident Report: #SOC-2026-003
-**Status:** 🔄 In Progress | **Priority:** 🟠 Medium | **Assigned To:** Vinayak Ashok Bharadi
+**Status:** ✅ Closed | **Priority:** 🟠 Medium | **Assigned To:** Pranit Kalambate
 
 ---
 
@@ -19,11 +19,11 @@ Following the identification of the primary threat actor (`40.80.148.42`) involv
 
 ### ⏱️ Attack Timeline Analysis
 - **Attacker IP:** `40.80.148.42`
-- **Total Attack Duration (Seconds):** `Pending`
-- **Total Attack Duration (Minutes):** `Pending`
+- **Total Attack Duration (Seconds):** `2742`
+- **Total Attack Duration (Minutes):** `45.70`
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-Pending
+index="botsv1" sourcetype="iis" c_ip="40.80.148.42" | transaction c_ip maxevents=50000 | eval duration_minutes=round((duration/60),2) | table c_ip, duration, duration_minutes, eventcount
