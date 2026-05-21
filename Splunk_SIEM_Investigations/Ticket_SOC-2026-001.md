@@ -20,13 +20,13 @@ Our external-facing web infrastructure has triggered a threshold alert due to an
 ### 📥 1. Malicious Source IP & Attack Volume
 - **Attacker IP:** `40.80.148.42`
 - **Total Request Count:** `3531`
-- **Visual Evidence:** ![Source IP](<Splunk_SIEM_Investigations/Ticket SOC-2026-001/image1.png>)
+- **Visual Evidence:** ![Source IP](Ticket_SOC-2026-001/image1.png)
 
 ### 🗺️ 2. Attacker Intent (Targeted URI Paths)
 - **Targeted Framework:** `Joomla CMS`
 - **Primary Attack Vector:** `/joomla/index.php/component/search/` (Highly targeted for potential injection vulnerabilities).
 - **Secondary Target:** `/joomla/administrator/index.php` (Attempted admin panel discovery/brute-forcing).
-- **Visual Evidence:** ![Attacker Intent](<Splunk_SIEM_Investigations/Ticket SOC-2026-001/image2.png>)
+- ***Visual Evidence:** ![Source IP](Ticket_SOC-2026-001/image2.png)
 
 ---
 
