@@ -1,7 +1,3 @@
----
-
-### 📄 Ticket 2
-```markdown
 # 🚨 Incident Report: #SOC-2026-002
 **Status:** ✅ Closed | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
