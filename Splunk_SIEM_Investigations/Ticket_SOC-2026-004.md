@@ -1,5 +1,5 @@
 # 🚨 Incident Report: #SOC-2026-004
-**Status:** 🔄 In Progress | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
+**Status:** ✅ Closed | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
 ---
 
@@ -19,11 +19,11 @@ Having identified the primary exfiltration source as `40.80.148.42`, the investi
 
 ### 🌍 Threat Intelligence Enrichment
 - **Attacker IP:** `40.80.148.42`
-- **Geolocation (Country):** `Pending`
-- **Threat Actor / Blacklist Status:** `Pending`
+- **Geolocation (Country):** `United States (Washington, Virginia)`
+- **Threat Actor / Blacklist Status:** `Known Scanner / Brute-forcer`
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-Pending
+index="botsv1" sourcetype="iis" c_ip="40.80.148.42" | head 1 | iplocation c_ip | table c_ip, Country, Region, City
