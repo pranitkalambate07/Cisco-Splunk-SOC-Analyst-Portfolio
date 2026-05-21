@@ -1,1 +1,29 @@
 
+# 🚨 Incident Report: #SOC-2026-002
+**Status:** 🔄 In Progress | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
+
+---
+
+## 📋 Ticket Overview
+* **Alert Title:** Potential Data Exfiltration: Large Payload Transfer Detected
+* **Target Server:** Web Server (IIS)
+* **Telemetry Source:** `index=botsv1` | `sourcetype=iis`
+
+---
+
+## 🔍 Detailed Description
+The SOC has received an alert regarding an abnormal spike in outbound data transfer from our web infrastructure. This behavior suggests potential Data Exfiltration, where an attacker might be downloading large sensitive files or database dumps. The raw data size is logged in bytes, requiring mathematical conversion for accurate impact assessment.
+
+---
+
+## 🕵️‍♂️ Investigation & Findings
+
+### 📥 1. Top Exfiltrator Details
+- **Suspect IP:** `Pending`
+- **Total Data Stolen (MB):** `Pending`
+
+---
+
+## 💻 Technical Evidence (SPL Query)
+```splunk
+Pending
