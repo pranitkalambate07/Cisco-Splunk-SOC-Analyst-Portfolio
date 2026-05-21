@@ -19,8 +19,8 @@ Our external-facing web infrastructure has triggered a threshold alert due to an
 *To be filled out after running Splunk queries...*
 
 ### 📥 1. Malicious Source IP & Attack Volume
-- **Attacker IP:** `Pending`
-- **Total Request Count:** `Pending`
+- **Attacker IP:** `40.80.148.42`
+- **Total Request Count:** `3531`
 
 ### 🗺️ 2. Attacker Intent (Targeted URI Paths)
 - *What specific directories or pages was the attacker scanning?*
