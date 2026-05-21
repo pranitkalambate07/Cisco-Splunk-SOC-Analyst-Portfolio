@@ -1,4 +1,7 @@
+---
 
+### 📄 Ticket 2
+```markdown
 # 🚨 Incident Report: #SOC-2026-002
 **Status:** ✅ Closed | **Priority:** 🔴 High | **Assigned To:** Pranit Kalambate
 
@@ -21,9 +24,10 @@ The SOC has received an alert regarding an abnormal spike in outbound data trans
 ### 📥 1. Top Exfiltrator Details
 - **Suspect IP:** `40.80.148.42`
 - **Total Data Stolen (MB):** `18.94 MB`
+- **Visual Evidence:** ![Data Exfiltration](Ticket_SOC-2026-002/evidence.png)
 
 ---
 
 ## 💻 Technical Evidence (SPL Query)
 ```splunk
-index="botsv1" sourcetype="stream:http" | stats sum(bytes_out) as TotalBytes by src_ip | eval Total_MB = round((TotalBytes/1024/1024), 2) | sort - Total_MB | head 10
+index="botsv1" sourcetype="stream:http" | stats sum(bytes_out) as TotalBytes by src_ip
