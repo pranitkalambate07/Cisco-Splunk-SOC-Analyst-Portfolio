@@ -21,7 +21,7 @@ A high-volume authentication anomaly was detected within the Azure Active Direct
 2. **Aggregation & Attribution:** I aggregated the failed sign-in logs by the Source IP (`ipAddress`) and Target User (`userPrincipalName`). Observing a single external IP address generating the `50126` error code across multiple distinct internal user accounts is the definitive behavioral signature of an automated Password Spraying attack.
 
 ---
-
+**Visual Evidence:** ![PowerShell Execution Evidence](Ticket_AZURE-001/evidence.png)
 ## 💻 Technical Evidence
 ### SPL Query Executed
 ```splunk
