@@ -21,7 +21,7 @@ Following a suspected credential dumping incident, the SOC initiated a threat hu
 2. **Behavioral Analysis:** The search returned over 1,441 events. Analysis of the raw logs revealed multiple successful RDP authentications (Logon Type 10) verified by the LSASS process across multiple hosts (`mercury`, `wrk-ghoppy`). This strongly indicates the adversary is 'living off the land' using stolen credentials to pivot via Remote Desktop Protocol.
 
 ---
-**Visual Evidence:** ![PowerShell Execution Evidence](Ticket_SOC-ADV-003/evidence.png)
+**Visual Evidence:** ![PowerShell Execution Evidence](Ticket_SOC-ADV-003/evidance.png)
 ## 💻 Technical Evidence
 ### SPL Query Executed
 ```splunk
