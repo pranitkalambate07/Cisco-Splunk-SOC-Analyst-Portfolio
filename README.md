@@ -3,12 +3,13 @@
 **Author:** Pranit Kalambate  
 **Role:** Cybersecurity / SOC Analyst  
 **Environment:** Splunk Enterprise  
-**Datasets Analyzed:** BOTS v1 (Web/Network), BOTS v2 (Endpoint/Sysmon), BOTS v3 (Azure Cloud)
+**Datasets Analyzed:** BOTS v1 (Web/Network), BOTS v2 (Endpoint/Sysmon), BOTS v3 (Azure Cloud)  
+**Training Alignment:** Cisco Networking Academy - *Data and Tools for Defense Analysts*
 
 ---
 
 ## 🎯 Project Objective
-The goal of this portfolio is to simulate a real-world, end-to-end Security Operations Center (SOC) investigation. By analyzing raw telemetry across different enterprise layers (Web, Endpoint, and Cloud) using Splunk (SPL), this project traces complex attack lifecycles—from initial web vulnerability scanning and data exfiltration to endpoint privilege escalation and cloud identity threats.
+The goal of this portfolio is to document the practical, hands-on lab exercises completed as part of the **Cisco Networking Academy "Data and Tools for Defense Analysts"** course (Cybersecurity Defense Analyst Career Path). By analyzing raw telemetry across different enterprise layers (Web, Endpoint, and Cloud) using Splunk (SPL), this project simulates a real-world Security Operations Center (SOC) investigation and traces complex attack lifecycles.
 
 ---
 
@@ -38,10 +39,13 @@ This portfolio is divided into 3 distinct domains. Click on the tickets below to
 ### 💻 Domain 2: Advanced Endpoint Threat Hunting (BOTS v2)
 *Folder: `Advanced_Threat_Hunting`*
 
-* 📄 **[Ticket 1: Suspicious Encoded PowerShell Execution](Advanced_Threat_Hunting/Ticket_SOC-ADV-002.md)**
+* 📄 **[Ticket 1: Ransomware Activity Detected (Shadow Copy Deletion)](Advanced_Threat_Hunting/Ticket_SOC-ADV-001.md)**
+  * Detected living-off-the-land (LotL) binary abuse via execution of the `vssadmin.exe delete shadows` command.
+  * Confirmed ransomware pre-encryption tactics on the compromised host `we8105desk.waynecorp.inc` (Bob Smith).
+* 📄 **[Ticket 2: Suspicious Encoded PowerShell Execution](Advanced_Threat_Hunting/Ticket_SOC-ADV-002.md)**
   * Detected obfuscated PowerShell execution (`-WindowStyle Hidden`, `-enc`) designed to bypass legacy AV signatures.
   * Traced the Base64 payload execution back to a compromised service account (`FROTHLY\service3`) on host `venus.frothly.local`.
-* 📄 **[Ticket 2: LSASS Credential Dumping & Lateral Movement](Advanced_Threat_Hunting/Ticket_SOC-ADV-003.md)**
+* 📄 **[Ticket 3: LSASS Credential Dumping & Lateral Movement](Advanced_Threat_Hunting/Ticket_SOC-ADV-003.md)**
   * Identified unauthorized memory access requests to the Local Security Authority Subsystem Service (`lsass.exe`) for credential theft.
   * Utilized raw log hunting to uncover lateral movement via Remote Desktop Protocol (EventCode 4624 / Logon Type 10).
 
@@ -63,4 +67,4 @@ This portfolio is divided into 3 distinct domains. Click on the tickets below to
 4. **Translating Tech to Business:** Used `eval` functions to convert raw bytes into readable Megabytes (MB) and utilized `timechart` to convert raw event counts into executive-friendly visual graphs.
 
 ---
-*Note: This portfolio is a continuous documentation of hands-on SIEM training, demonstrating proficiency in multi-domain log analysis, proactive threat hunting, and professional incident reporting.*
+*Note: This portfolio is a continuous documentation of hands-on SIEM training aligned with Cisco Networking Academy standards, demonstrating proficiency in multi-domain log analysis, proactive threat hunting, and professional incident reporting.*
