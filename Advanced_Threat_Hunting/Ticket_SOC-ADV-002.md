@@ -22,7 +22,7 @@ An automated SOC alert flagged suspicious PowerShell activity involving obfuscat
 3. **Attribution:** The activity originated from the `service3` account on the host `venus.frothly.local`.
 
 ---
-**Visual Evidence:** ![PowerShell Execution Evidence](Ticket_SOC-ADV-002/evidence.png)
+**Visual Evidence:** ![PowerShell Execution Evidence](Ticket_SOC-ADV-002/evidance.png)
 ## 💻 Technical Evidence
 
 ### SPL Query Executed
